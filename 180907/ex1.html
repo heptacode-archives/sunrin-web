@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = new Array(15.1, 15.4, 16.1, 17.5, 19.2, 21.4);
+        arr.push(0);
+        for(var i = 0; i <= arr.length - 2; i++)
+            arr[arr.length - 1] = eval(arr[arr.length -1] + arr[i]);
+        document.write("<h1>Array 객체로 배열 만들기</h1><hr>평균 온도는 "+arr[arr.length - 1]/(arr.length-1));
+    </script>
+</body>
+</html>

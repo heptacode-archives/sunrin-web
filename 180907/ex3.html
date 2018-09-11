@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        auto();
+        function auto(){
+            var now = new Date();
+            var diff = new Date(2018, 11, 28) - now.getTime();
+            var ms = 1000;
+            var s = 60 * ms; //1분 = 60초
+            var h = s * 60; //1시간 = 60분
+            var d = h * 24; //1일 = 24시간
+            document.getElementsByTagName('html')[0].innerHTML = 
+                Math.round(diff/d)+'일'+
+                Math.round(diff/d/h)+'시간'+
+                Math.round(diff/d/h/s)+'분'+
+                Math.round(diff/d/h/s/ms)+'초';
+        }
+        setInterval(auto, 1000);
+    </script>
+</body>
+</html>
