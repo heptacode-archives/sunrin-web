@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-kr">
+		<link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+		<script src="/assets/js/jquery.min.js"></script>
+		<script src="/assets/js/popper.min.js"></script>
+		<script src="/assets/js/bootstrap.min.js"></script>
+	</head>
+	<body style="margin-left: 10%; margin-top: 100px; width: 80%;">
+		<div style="border: 1px solid gray; border-radius: 10px; padding: 60px; margin-bottom: 60px;">
+			<form enctype="multipart/form-data">
+				<h3>온라인 FORM</h3><br>
+				<fieldset style="border: 1px solid gray; border-radius: 10px; padding: 50px;">
+					<legend>로그인</legend>
+					<div class="row">
+	          <div class="col-lg-6">
+	          	<label for="id"><b>아이디</b></label>
+	            <input type="text" class="form-control center" id="id" name="name" maxlength=64 placeholder="아이디 입력" required />
+	          </div>
+	          <div class="col-lg-6">
+	          	<label for="pw"><b>비밀번호</b></label>
+	            <input type="password" class="form-control center" id="pw" name="name" maxlength="128" placeholder="비밀번호 입력" required />
+	          </div>
+	        </div>
+				</fieldset><br>
+				<fieldset style="border: 1px solid gray; border-radius: 10px; padding: 50px;">
+					<legend>개인정보</legend>
+					<div class="row">
+	          <div class="col-lg-6">
+	          	<label for="name"><b>이름</b></label>
+	            <input type="text" class="form-control center" id="name" name="name" maxlength="10" placeholder="이름 입력" required />
+	          </div>
+	          <div class="col-lg-6">
+          		<label for="stdid"><b>학번</b></label>
+	            <input type="tel" class="form-control center" id="stdid" name="name" maxlength="5" placeholder="학번 입력" required />
+	        	</div>
+	        </div><br>
+	        <div class="row">
+	          <div class="col-lg-6">
+	          	<label for="dateofbirth"><b>생년월일</b></label>
+	          	<input type="date" id="dateofbirth" class="form-control" value="1994-05-06" required />
+	          </div>
+	          <div class="col-lg-6">
+	          	<label for="color"><b>좋아하는 색상</b></label>
+	          	<input type="color" id="color" class="form-control" style="height: 41px;" required />
+	          </div>
+	        </div><br>
+	        <div class="row">
+	        	<div class="col-lg-6">
+	          	<label for="size"><b>발 사이즈</b></label>
+	          	<input type="number" id="size" class="form-control" min="100" value="100" required />
+	          </div>
+	          <div class="col-lg-6">
+	          	<label for="department"><b>학과</b></label>
+	          	<div class="form-group">
+	          		<button id="department" class="btn btn-outline-dark btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-top: 2px; height: 38px;" type="button"><span id="department_default">&nbsp;학과 선택&nbsp;&nbsp;&nbsp;</span><span id="department_value"></span></button>
+	          		<div class="dropdown-menu">
+	              	<button class="dropdown-item" onclick="$('#department_value').text('&nbsp;정보보호과&nbsp;&nbsp;&nbsp;'); $('#department_default').css('display', 'none');">정보보호과</button>
+	                <button class="dropdown-item" onclick="$('#department_value').text('&nbsp;소프트웨어과&nbsp;&nbsp;&nbsp;'); $('#department_default').css('display', 'none');">소프트웨어과</button>
+	                <button class="dropdown-item" onclick="$('#department_value').text('&nbsp;테크노경영과&nbsp;&nbsp;&nbsp;'); $('#department_default').css('display', 'none');">테크노경영과</button>
+	                <button class="dropdown-item" onclick="$('#department_value').text('&nbsp;멀티미디어과&nbsp;&nbsp;&nbsp;'); $('#department_default').css('display', 'none');">멀티미디어과</button>
+	            	</div>
+							</div>
+	          </div>
+	        </div>
+	        <div class="row">
+	          <div class="col-lg-12">
+	          	<label for="self-intro"><b>자기소개</b></label>
+          		<textarea id="self-intro" class="form-control" placeholder="자기소개 입력" rows="5"></textarea>
+	          </div>
+	        </div>
+				</fieldset>
+        <div class="row">
+		      <div class="col" style="text-align: center; margin-top: 50px;">
+						<span class="col"><input type="submit" class="btn btn-outline-primary" value="&nbsp;&nbsp;&nbsp;&nbsp;확인&nbsp;&nbsp;&nbsp;&nbsp;" onclick="alert('설문을 완료하였습니다.');" /></span>
+						<span class="col"><input type="reset" class="btn btn-outline-danger" value="&nbsp;&nbsp;지우기&nbsp;&nbsp;" /></span>
+					</div>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>
