@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var n = parseInt(prompt("자연수를 입력하십시오.")), i, sum = 0, html = "<h1>3으로 나눈 나머지가 1인 수만 더하기</h1><hr>";
+        for(i = 1; i <= n; i++){
+            if(i % 3 == 1){
+              html += i+"&nbsp;";
+              sum += i;
+            }
+            else
+                continue;
+        }
+        html += "합은 "+sum;
+        document.write(html);
+    </script>
+</body>
+</html>
