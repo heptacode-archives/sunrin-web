@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-kr">
+		<link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+		<link type="text/css" href="style-addon.css" rel="stylesheet">
+	</head>
+	<body style="margin-left: 25%; margin-top: 100px; width: 50%;">
+		<div style="border: 1px solid gray; border-radius: 10px; padding: 60px;">
+			<form enctype="multipart/form-data">
+				<h3>온라인 FORM</h3><br>
+        <div class="row">
+          <div class="col-lg-6">
+          	<label for="name"><b>성명</b></label>
+            <input type="text" class="form-control center" id="name" name="name"  maxlength="4" style="margin-top:1px; height: 43px;" required />
+          </div>
+          <div class="col-lg-6">
+          	<label for="file"><b>증명사진</b></label>
+          	<input type="file" class="form-control center" id="file" accept="image/*" required />
+          </div>
+        </div><br>
+        <div class="row">
+          <div class="col-lg-6">
+          	<label for="gender"><b>성별</b></label>
+          	<div class="form-group radios">
+	          	<span class="col"><input type="radio" id="남" name="gender" value="남"><label for="남">남</label></span>
+	          	<span class="col"><input type="radio" id="여" name="gender" value="여"><label for="여">여</label></span>
+	          </div>
+          </div>
+          <div class="col-lg-6">
+          	<label for="gender"><b>취미</b></label>
+          	<div class="form-group checks etrans">
+          		<span class="col"><input type="checkbox" id="요리" name="fruit" value="요리"><label for="요리">요리</label></span>
+          		<span class="col"><input type="checkbox" id="게임" name="fruit" value="게임"><label for="게임">게임</label></span>
+          		<span class="col"><input type="checkbox" id="독서" name="fruit" value="독서"><label for="독서">독서</label></span>
+          		<span class="col"><input type="checkbox" id="음악감상" name="fruit" value="음악감상"><label for="음악감상">음악감상</label></span>
+						</div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+		      <div class="col" style="text-align: center; margin-top: 50px;">
+						<span class="col"><input type="submit" class="btn btn-outline-primary" value="&nbsp;&nbsp;&nbsp;&nbsp;확인&nbsp;&nbsp;&nbsp;&nbsp;" onclick="alert('설문을 완료하였습니다.');" /></span>
+						<span class="col"><input type="reset" class="btn btn-outline-danger" value="&nbsp;&nbsp;지우기&nbsp;&nbsp;" /></span>
+					</div>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>
