@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>addEventListener()를 이용한 리스너 등록</title>
+<script>
+var p;
+function init() { // 문서가 완전히 로드되었을 때 호출
+  //  1. id가 p인 dom 객체를 변수 p에 저장
+  //  2. p의 onmouseover 이벤트 리스너로 over 함수 등록 (addEventListener 사용)
+  //  3. p의 onmouseout 이벤트 리스너로 out함수 등록 (addEventListener 사용)
+		
+}
+function over() {
+	p.style.backgroundColor="orchid";
+}
+function out() {
+	p.style.backgroundColor="white";
+}
+</script>
+</head>
+<body onload="init()">
+<h3>addEventListener()를 이용한 리스너 등록</h3>
+<hr>
+<p id="p">마우스 올리면 orchid 색으로 변경</p>
+</body>
+</html>
