@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form id="f">form
+        <div id="d">div
+            <p id="p">p
+            </p>
+        </div>
+    </form>
+    <script>
+        document.getElementById("f").addEventListener("click", capture, true);
+        document.getElementById("d").addEventListener("click", capture, true);
+        document.getElementById("p").addEventListener("click", capture, true);
+        
+        document.getElementById("f").addEventListener("click", bubble, true);
+        document.getElementById("d").addEventListener("click", bubble, true);
+        document.getElementById("p").addEventListener("click", bubble, true);
+
+        function capture(){
+            alert(event.currentTarget + "캡쳐리스너");
+        }
+        function bubble(){
+            alert(event.currentTarget + "버블리스너");
+        }
+    </script>
+</body>
+</html>
