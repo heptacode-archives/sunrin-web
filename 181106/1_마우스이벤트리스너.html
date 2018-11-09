@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>마우스 관련 리스너</title>
+	<script>
+		var width = 1; // 테두리 두께
+		function down(obj) {
+			//1. 객체의 폰트스타일(fontStyle)을 italic으로
+            obj.style.fontStyle = "italic";
+		}
+		function up(obj) {
+			//2. 객체의 폰트스타일(fontStyle)을 normal로
+            obj.style.fontStyle = "normal";
+		}
+		function over(obj) {
+			//3. 객체의 테두리색(borderColor)을 violet으로
+            obj.style.borderColor = "violet";
+		}
+		function out(obj) {
+			//4. 객체의 테두리색(borderColor)을 lightgray로
+            obj.style.borderColor = "lightgray";
+		}
+
+		function wheel(e, obj) {
+			if (e.wheelDelta < 0) /*5. 휠을 아래로 굴리는 경우(이벤트 객체의 wheelDelta 프로퍼티 사용)*/
+			{
+				// 6. width값 1 감소
+                width--;
+				// 7. width값이 0보다 작아지지 않게 처리 (if문 사용해서 0보다 작아지는경우에는 0으로 고정)
+                if(width < 0) width = 0;
+			}
+			else // 휠을 위로 굴리는 경우
+				// 8. width값 1 증가
+                width++;
+
+			//9. 객체의 테두리스타일(borderStyle)을 ridge로
+            obj.style.borderWidth = width + "px";
+			//10. 객체의 테두리두께(borderWidth)를 width만큼의 px로
+		}
+
+		function where(e) {
+			//12. id가 div인 dom 객체 가져오기
+            var div = document.getElementById("div");
+			//13. screenX, screenY, clientX, clientY, offsetX, offsetY, x, y 출력하는 text 만들기
+            var text = "(screenX, screenY)=" + e.screenX + "," + e.screenY + "<br>";
+			text += "(clientX, clientY)=" + e.clientX + "," + e.clientY + "<br>";
+			text += "(offsetX, offsetY)=" + e.offsetX + "," + e.offsetY + "<br>";
+			text += "(x, y)=" + e.x + "," + e.y + "\n";
+			//14. div의 innerHTML 을 text로 바꾸기
+            div.innerHTML = "text";
+            }
+		
+		function hideMenu() {
+			//15.alert창 출력
+            alert();
+			//16.false를 리턴하기
+            return false;
+		}
+		//17.document객체의 contextmenu 이벤트리스너로 hideMenu 등록하기
+        document.oncontextmenu = hideMenu;
+		
+	</script>
+</head>
+<body>
+	<h3>마우스 관련 이벤트 리스너</h3>
+	<hr>
+	<div>마우스 관련
+        <span onmousedown="down(this)"
+              onmouseup="up(this)"
+              onmouseover="over(this)"
+              onmouseout="out(this)"
+              onmousewheel="wheel(event, this)">이벤트</span>가 발생합니다. <!--이벤트 등록-->
+	</div>
+	<p> span객체에 추가할 이벤트 :<br>
+		onmousedown :  fontStyle 을 italic으로<br>
+		onmouseup : fontStyle을 normal로<br>
+		onmouseover : borderColor를 violet으로<br>
+		onmouseout : borderColor를 lightgray로<br>
+		onwheel : 휠을 아래로 굴릴 때 width 1씩 감소 , width값이 0보다 작아지지 않게, <br>
+                휠을 위로 굴릴때 width 1씩 증가 , borderStyle 은 ridge
+</p>
+	<br>
+	<br>
+	<img src="http://newsimg.hankookilbo.com/2016/04/13/201604131460701467_1.jpg" 
+	     onmousemove="where(event);/*11.event객체를 넘겨주면서 where함수 호출하기*/"
+	    style="border:1px solid; width:300px">
+	<br>
+	<div id="div"></div>
+
+</body>
+</html>
