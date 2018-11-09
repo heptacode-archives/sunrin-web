@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body onload="document.getElementById('name').focus()">
+    <form>
+        이름 : <input type="text" id="name" onblur="blur(this)"><br>
+        학번 : <input type="text"><br>
+        <input type="radio" name="city" value="서울">서울
+        <input type="radio" name="city" value="부산">부산
+        <input type="radio" name="city" value="춘천">춘천
+        <input type="button" value="find chked" onclick="chk()">
+        <br>
+        <input type="checkbox" name="products" value="1500">컵라면 1,500원
+        <input type="checkbox" name="products" value="2000">짜빠구리 2,000원
+        <input type="checkbox" name="products" value="1000">캔음료 1,000원
+        <input type="checkbox" name="products" value="1500">봉지과자 1,500원
+        <input type="button" value="find chked" onclick="calc()">
+        <div id="price"></div>
+        <br>
+    </form>
+    <img id="img" src="https://data.ac-illust.com/data/thumbnails/66/660a4ab44bf3dd93d9968e3669267dc1_t.jpeg" alt="">
+    <select name="selection">
+        <option value="https://data.ac-illust.com/data/thumbnails/66/660a4ab44bf3dd93d9968e3669267dc1_t.jpeg" checked>사과</option>
+        <option value="https://illustimage.com/photo/2412.png">바나나</option>
+        <option value="https://preivews.123rf.com/images/grgroup/grgroup1611/grgroup161104944/65340176-실루엣-망고와-줄기와-색상-및-벡터-일러스트-레이-션-leafs.jpg">망고</option>
+    </select>
+    <script>
+        /*var img= document.getElementById("img");
+        img.src = "https://illustimage.com/photo/2412.png";
+        img.onload = function(){
+            var width = img.width;
+            alert(width);
+        }*/
+        /*function blur(obj){
+            if(obj.value == "") {
+                alert("이름을 입력하세요!");
+                obj.focus();
+            }
+        }*/
+        /*function chk(){
+            var city = document.getElementsByName("city");
+            var found = null;
+            for(var i = 0; i < city.length; i++){
+                if(city[i].checked) found = city[i];
+            }
+            if(found != null)   alert(found.value + "이 선택되었습니다!");
+            else alert("선택 안됨!");
+        }*/
+      /*var products = document.getElementsByName('products');
+        function calc(){
+            var price = 0;
+            for(var i = 0; i < products.length; i++){
+                if(products[i].checked) price += parseInt(products[i].value);
+            }
+            document.getElementById("price").innerHTML = "지불하실 금액은 "+price+"원 입니다.";
+        }*/
+        var selection = document.getElementsByName("selection");
+        selection.onchange = function(){
+            document.getElementById("img").src = selection.options[selection.selectedIndex].value;
+        }
+    </script>
+</body>
+</html>
